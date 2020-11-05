@@ -1,1 +1,18 @@
-{"$schema":"http://json-schema.org/draft-07/schema#","$id":"kara-test-org-20201105-sex.json-0.0.1","description":"Sex assigned at birth, or by sequencing","anyOf":[{"const":"male","description":"","source":""},{"const":"female","description":"","source":""}]}
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "kara-test-org-20201105-sex.json-0.0.1",
+    "description": "Sex assigned at birth, or by sequencing",
+    "anyOf": [
+        {
+            "const": "male",
+            "description": "",
+            "source": ""
+        },
+        {
+            "const": "female",
+            "description": "",
+            "source": ""
+        }
+    ]
+}
+

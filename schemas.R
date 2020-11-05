@@ -19,7 +19,7 @@ create_mini_schema <- function(data, key) {
     "$id" = glue::glue("kara-test-org-20201105-{key}.json-0.0.1"),
     data
   )
-  toJSON(schema, auto_unbox = TRUE)
+  prettify(toJSON(schema, auto_unbox = TRUE))
 }
 
 json_versions <- imap(
