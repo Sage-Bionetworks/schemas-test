@@ -1,0 +1,1 @@
+{"$schema":"http://json-schema.org/draft-07/schema#","$id":"kara-test-org-20201105-isCellLine.json-0.0.1","description":"Boolean flag indicating whether or not sample source is a cell line","type":"boolean"}
