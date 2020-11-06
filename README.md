@@ -29,8 +29,9 @@ TODO:
 - [X] Validate mini-schemas with `ajv compile`
 - [X] Convert format to Synapse's required format (with `"concreteType"`)
 - [X] Register these mini-schemas on Synapse and ensure they work
-- [ ] Build a more complete schema that references the mini-schemas
-- [ ] Register that schema and ensure that it works
+- [X] Build a more complete schema that references the mini-schemas
+- [X] Register that schema and ensure that it works
+- [ ] Bind schema to an entity and test validation
 - [ ] Set up CI to check that mini-schemas are valid and register them in
       Synapse. Need to also ensure that the version number is incremented if the
       schema changes.
