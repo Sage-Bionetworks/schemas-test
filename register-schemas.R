@@ -5,6 +5,7 @@
 library("synapser")
 library("fs")
 library("here")
+library("purrr")
 
 synLogin()
 
