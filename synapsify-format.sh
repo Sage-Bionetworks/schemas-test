@@ -1,5 +1,5 @@
 #!/bin/bash
-FILES=./terms/experimentalData/*.json
+FILES=./terms/*/*.json
 for f in $FILES
 do
     echo "Converting $f..."
