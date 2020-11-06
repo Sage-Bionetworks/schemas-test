@@ -110,7 +110,7 @@
         },
         {
             "const": "hTauTrem2",
-            "description": "expresses six isoforms of the human tau protein under the control of the endogenous human MAPT promoter backcrossed into Trem2 −/−mice",
+            "description": "expresses six isoforms of the human tau protein under the control of the endogenous human MAPT promoter backcrossed into Trem2 -/-mice",
             "source": "https://www.synapse.org/#!Synapse:syn18693211"
         },
         {
