@@ -18,7 +18,7 @@ exp <- fromJSON(
 create_mini_schema <- function(data, key, module) {
   schema <- c(
     "$schema" = "http://json-schema.org/draft-07/schema#",
-    "$id" = glue::glue("karatestorg20201105-{module}.{key}.json-0.0.1"),
+    "$id" = glue::glue("karatestorg20201105-{module}.{key}-0.0.1"),
     data
   )
   prettify(toJSON(schema, auto_unbox = TRUE))
