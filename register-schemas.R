@@ -21,7 +21,7 @@ synLogin()
 
 # Register schemas -------------------------------------------------------------
 
-term_files <- dir_ls(here("terms-synapse"))
+term_files <- dir_ls(here("terms-synapse"), regexp = "*\\.json")
 
 register_term <- function(file) {
   synRestPOST(
