@@ -14,8 +14,8 @@ TODO:
 
 - [X] Convert JSON Schema files into individual mini-schemas (under `terms/`)
 - [X] Validate mini-schemas with `ajv compile -s "*.json"`
-- [ ] Register these mini-schemas on Synapse and ensure they work (requires
-      adding `"concreteType"` key stuff)
+- [X] Convert format to Synapse's required format (with `"concreteType"`)
+- [ ] Register these mini-schemas on Synapse and ensure they work
 - [ ] Build a more complete schema that references the mini-schemas
 - [ ] Register that schema and ensure that it works
 - [ ] Set up CI to check that mini-schemas are valid and register them in
