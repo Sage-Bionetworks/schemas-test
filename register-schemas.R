@@ -6,6 +6,7 @@ library("synapser")
 library("fs")
 library("here")
 library("purrr")
+library("glue")
 
 synLogin()
 
@@ -19,22 +20,31 @@ synLogin()
 #   body = '{organizationName: "karatestorg20201105"}'
 # )
 
-# Register schemas -------------------------------------------------------------
+# Function to register JSON schema file ----------------------------------------
 
-term_files <- dir_ls(here("terms-synapse"), regexp = "*\\.json")
-
-register_term <- function(file) {
+register_schema <- function(file) {
   synRestPOST(
     uri = "/schema/type/create/async/start",
     body = paste(readLines(file), collapse = "")
   )
 }
 
+# Register terms ---------------------------------------------------------------
+
+term_files <- dir_ls(here("terms-synapse"), regexp = "*\\.json")
+
 ## Register each mini-schema
-walk(term_files, register_term)
+walk(term_files, register_schema)
 
 ## List all schemas to check they're there
 synRestPOST(
   uri = "/schema/list",
   body = '{organizationName: "karatestorg20201105"}'
 )
+
+# Register top-level schema ----------------------------------------------------
+
+token <- register_schema(here("schemas", "testschema.json"))
+
+# Retrieve schema
+synRestGET(uri = glue("/schema/type/create/async/get/{token$token}"))
