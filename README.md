@@ -8,12 +8,25 @@ be registered in Synapse.
 Right now, it's not possible for a schema in Synapse to reference only certain
 definitions in another schema, so this repo turns each term into its own mini
 schema. I've done this only for the terms in the experimentalData module for the
-time being.
+time being. `source-schemas/` contains the JSON Schema file copied from Cindy's
+repo -- this folder can be removed in the future, but is left in for now to
+illustrate how we convert the JSON Schema into mini-schemas via
+`create-mini-schemas.R`.
+
+Terms are defined in the `terms/` folder. These are valid JSON Schema files (to
+check that they are valid, run `ajv compile -s "terms/*/*.json`). These are the
+files that should be edited when adding new values, etc.
+
+To register these terms on Synapse requires a slightly different format with a
+couple extra keys. `synapsify-format.sh` converts the files in `terms/` into the
+correct format, and saves them in `terms-synapse/`. Each of these terms has been
+registered in Synapse via the `register-schemas.R` script. Ultimately, I think
+we want to automate converting the JSON format and registering to Synapse.
 
 TODO:
 
 - [X] Convert JSON Schema files into individual mini-schemas (under `terms/`)
-- [X] Validate mini-schemas with `ajv compile -s "*.json"`
+- [X] Validate mini-schemas with `ajv compile`
 - [X] Convert format to Synapse's required format (with `"concreteType"`)
 - [X] Register these mini-schemas on Synapse and ensure they work
 - [ ] Build a more complete schema that references the mini-schemas
