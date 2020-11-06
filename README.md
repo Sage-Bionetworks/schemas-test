@@ -23,6 +23,12 @@ correct format, and saves them in `terms-synapse/`. Each of these terms has been
 registered in Synapse via the `register-schemas.R` script. Ultimately, I think
 we want to automate converting the JSON format and registering to Synapse.
 
+Higher-level schemas that reference the individual terms are in `schemas/` (but
+could also live elsewhere, including outside of this repo). One current issue is
+that ajv-cli can't validate the schema because it can't find the references in
+the format they're in...but that format is required for Synapse. Not sure what
+to do about that.
+
 TODO:
 
 - [X] Convert JSON Schema files into individual mini-schemas (under `terms/`)
