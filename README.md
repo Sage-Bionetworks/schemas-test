@@ -70,7 +70,7 @@ We still need to test out binding the registered `testschema.json` to a folder
 and validating data against it.
 
 To use these terms, HTAN and other projects that use
-[schematic](https://github.com/sage-bionetworks/schematic) will need to...
+[schematic](https://github.com/sage-bionetworks/schematic) will need to generate...
 [milen can you fill this in?]
 
 Over time we will add terms to the vocabulary, and change existing terms. The
