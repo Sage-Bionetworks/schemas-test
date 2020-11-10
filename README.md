@@ -22,6 +22,8 @@ Schema, such as the following:
 }
 ```
 
+Templates for adding new terms are included in the `term-templates/` folder.
+
 To register these schemas in Synapse, we need to slightly modify their format
 and nest the schema inside of some additional JSON that Synapse requires.
 `synapsify-format.sh` converts them to the correct format by adding and stores
@@ -123,7 +125,7 @@ A few questions remain:
 - [X] Register these mini-schemas on Synapse and ensure they work
 - [X] Build a more complete schema that references the mini-schemas
 - [X] Register that schema and ensure that it works
-- [ ] Add templates for new terms to make contributing easier
+- [X] Add templates for new terms to make contributing easier
 - [ ] Bind schema to an entity and test validation
 - [ ] Set up CI to check that mini-schemas are valid. Need to also ensure that
       the version number is incremented if the schema changes.
