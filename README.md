@@ -116,6 +116,23 @@ A few questions remain:
   should do about this.
 - How do we set up the testing and CI described above? (Kara is working on this
   and has some ideas, but nothing in place and working yet)
+  - One potential issue I'm writing here so I don't forget: if we want to
+    register schemas on merge, we should have the PR attempt to register them as
+    well so we can catch any issues before merging. The PR should either
+    register them to a different organization (tricky since the organization
+    name is in the schema itself), or to the Synapse staging endpoint instead of
+    prod. But imagine this: Jane opens a PR that adds a new value for `assay`,
+    and she increments the version number. Anya reviews the PR and asks that
+    Jane include a description for her new assay. Jane makes the change and
+    pushes to her branch. There's no need to increment the version a second time
+    since the prod version of the schema hasn't changed yet, but we also can't
+    re-register it on staging because the version from Jane's first commit was
+    already registered. Maybe when registering on staging we want to append the
+    commit sha to the version number to ensure uniqueness (*need to find out if
+    Synapse schema versioning would support this*). We probably would *not* want
+    to do this for the final schemas: that would make it very hard for people to
+    find which version to reference, since it wouldn't be tracked in the GitHub
+    versions of the schemas themselves.
 
 ## TODO:
 
