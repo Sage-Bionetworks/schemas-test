@@ -50,10 +50,11 @@ whenever possible, since queries on Synapse will still treat `fileFormat` and
 }
 ```
 
-## What's to come
+The `bind-schema.R` shows an example of how to bind `testschema.json` to a
+folder, and validate annotations against it. This is just for demonstration
+purposes.
 
-We still need to test out binding the registered `testschema.json` to a folder
-and validating data against it.
+## What's to come
 
 To use these terms, HTAN and other projects that use
 [schematic](https://github.com/sage-bionetworks/schematic) will need to generate...
@@ -133,7 +134,7 @@ A few questions remain:
 - [X] Build a more complete schema that references the mini-schemas
 - [X] Register that schema and ensure that it works
 - [X] Add templates for new terms to make contributing easier
-- [ ] Bind schema to an entity and test validation
+- [X] Bind schema to an entity and test validation
 - [ ] Set up CI to check that mini-schemas are valid. Need to also ensure that
       the version number is incremented if the schema changes.
 - [ ] Automatically register terms in Synapse
