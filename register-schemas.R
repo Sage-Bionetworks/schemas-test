@@ -44,6 +44,8 @@ synRestPOST(
 
 # Register top-level schema ----------------------------------------------------
 
+# TODO update this to work after the changes in 98143ae (testschema.json no
+# longer includes the full request body; need to add it here)
 token <- register_schema(here("schemas", "testschema.json"))
 
 # Retrieve schema
