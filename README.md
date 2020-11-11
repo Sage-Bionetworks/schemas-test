@@ -119,6 +119,10 @@ A few questions remain:
     to do this for the final schemas: that would make it very hard for people to
     find which version to reference, since it wouldn't be tracked in the GitHub
     versions of the schemas themselves.
+    - John noted that a better approach, instead of registering schemas on
+      staging, might be to have a way for Synapse to tell us if a schema would
+      be valid without actually registering it. That should allow us to skip
+      adding the commit sha to a version.
 
 ## TODO:
 
