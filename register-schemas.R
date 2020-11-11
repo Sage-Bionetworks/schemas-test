@@ -22,10 +22,18 @@ synLogin()
 
 # Function to register JSON schema file ----------------------------------------
 
+create_body <- function(file) {
+  paste(
+    '{"concreteType": "org.sagebionetworks.repo.model.schema.CreateSchemaRequest", "schema": ',
+    paste(readLines(file), collapse = ""),
+    '}'
+  )
+}
+
 register_schema <- function(file) {
   synRestPOST(
     uri = "/schema/type/create/async/start",
-    body = paste(readLines(file), collapse = "")
+    body = create_body(file)
   )
 }
 
@@ -44,8 +52,6 @@ synRestPOST(
 
 # Register top-level schema ----------------------------------------------------
 
-# TODO update this to work after the changes in 98143ae (testschema.json no
-# longer includes the full request body; need to add it here)
 token <- register_schema(here("schemas", "testschema.json"))
 
 # Retrieve schema
