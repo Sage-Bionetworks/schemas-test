@@ -24,25 +24,11 @@ Schema, such as the following:
 
 Templates for adding new terms are included in the `term-templates/` folder.
 
-To register these schemas in Synapse, we need to slightly modify their format
-and nest the schema inside of some additional JSON that Synapse requires.
-`synapsify-format.sh` converts them to the correct format by adding and stores
-the resulting files in `terms-synapse/`. Thus the `specimenID` schema above becomes:
-
-```
-{
-  "concreteType": "org.sagebionetworks.repo.model.schema.CreateSchemaRequest",
-  "schema": {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "karatestorg20201105-experimentalData.specimenID-0.0.1",
-    "description": "Identifying string linked to a particular sample or specimen",
-    "type": "string"
-  }
-}
-```
-
-The terms in `terms-synapse/` have been registered in Synapse under a test
-organization via the `register-schemas.R` script.
+To register these schemas in Synapse, we run `synapsify-format.sh` and then
+`register-schemas.R`. The shell script creates the appropriate request body
+format to be sent to the schema API endpoints. In the future when the
+programmatic clients have functions for registering schemas, they can hopefully
+handle that and we should be able to skip the `synapsify-format.sh` step.
 
 Each project can use these terms to build a schema or set of schemas to validate
 annotations. By referencing the terms that are registered in Synapse, we can
