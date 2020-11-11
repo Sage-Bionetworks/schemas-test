@@ -88,9 +88,6 @@ the synapseAnnotations repo.
 
 A few questions remain:
 
-- Is there anything in this approach that won't work with the way Synapse
-  schemas are implemented? It seems to work so far, but I haven't attempted to
-  validate actual annotations yet.
 - Compiling schemas locally: validation libraries like ajv let you check that
   JSON Schema is valid according to the JSON Schema spec, however this does not
   work for `testschema.json`. That's because referencing terms in a way that
