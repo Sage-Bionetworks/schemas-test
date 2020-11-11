@@ -24,11 +24,7 @@ Schema, such as the following:
 
 Templates for adding new terms are included in the `term-templates/` folder.
 
-To register these schemas in Synapse, we run `synapsify-format.sh` and then
-`register-schemas.R`. The shell script creates the appropriate request body
-format to be sent to the schema API endpoints. In the future when the
-programmatic clients have functions for registering schemas, they can hopefully
-handle that and we should be able to skip the `synapsify-format.sh` step.
+To register these schemas in Synapse `register-schemas.R`.
 
 Each project can use these terms to build a schema or set of schemas to validate
 annotations. By referencing the terms that are registered in Synapse, we can

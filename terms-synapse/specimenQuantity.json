@@ -1,9 +1,0 @@
-{
-  "concreteType": "org.sagebionetworks.repo.model.schema.CreateSchemaRequest",
-  "schema": {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "karatestorg20201105-dhart.specimenQuantity-0.0.1",
-    "description": "Currently unused, but could be used to describe how much specimen remains",
-    "type": "string"
-  }
-}
